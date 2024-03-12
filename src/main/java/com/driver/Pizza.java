@@ -57,7 +57,7 @@ public class Pizza {
 
             finalbill.append("Base Price Of The Pizza: ").append(basePrice).append("\n");
             finalbill.append(bill);
-            finalbill.append("Total Price: ").append(price);
+            finalbill.append("Total Price: ").append(price).append("\n");
             return finalbill.toString();
         }
         return finalbill.toString();

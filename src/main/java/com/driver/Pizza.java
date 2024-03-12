@@ -9,6 +9,8 @@ public class Pizza {
     private boolean extraToppingAdded;
     private boolean paperbagAdded;
     private int basePrice;
+    private boolean isBill;
+
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -48,13 +50,17 @@ public class Pizza {
             this.bill += "Paperbag Added: " + 20 + "\n";
         }
     }
-
+    StringBuilder finalbill = new StringBuilder();
     public String getBill(){
-        StringBuilder finalbill = new StringBuilder();
-        finalbill.append("Base Price Of The Pizza: ").append(basePrice).append("\n");
-        finalbill.append(bill);
-        finalbill.append("Total Price: ").append(price);
-        // your code goes here
+
+        if(isBill==false) {
+
+            finalbill.append("Base Price Of The Pizza: ").append(basePrice).append("\n");
+            finalbill.append(bill);
+            finalbill.append("Total Price: ").append(price);
+            return finalbill.toString();
+        }
         return finalbill.toString();
+
     }
 }

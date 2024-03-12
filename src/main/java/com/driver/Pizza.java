@@ -29,7 +29,7 @@ public class Pizza {
         if(!extraCheeseAdded) {
             extraCheeseAdded = true;
             price += 80;
-            this.bill += "Extra Cheese Added: " + 80 + "\n";
+
         }
     }
 
@@ -38,7 +38,7 @@ public class Pizza {
         if(!extraToppingAdded) {
             extraToppingAdded = true;
             price += isVeg ? 70 : 120;
-            this.bill += "Extra Topping Added: " + (isVeg ? 70 : 120) + "\n";
+
         }
     }
 
@@ -47,21 +47,32 @@ public class Pizza {
         if(!paperbagAdded) {
             paperbagAdded = true;
             price += 20;
-            this.bill += "Paperbag Added: " + 20 + "\n";
+
         }
     }
-    StringBuilder finalbill = new StringBuilder();
-
+   // StringBuilder finalbill = new StringBuilder();
     public String getBill(){
 
-        if(isBill==false) {
 
-            finalbill.append("Base Price Of The Pizza: ").append(basePrice).append("\n");
-            finalbill.append(bill);
-            finalbill.append("Total Price: ").append(price).append("\n");
+        if(isBill==false) {
+            this.bill += "Base Price Of The Pizza: " + basePrice + "\n";
+            if(extraCheeseAdded){
+                this.bill += "Extra Cheese Added: " + 80 + "\n";
+            }
+            if(extraToppingAdded){
+                this.bill += "Extra Topping Added: " + (isVeg ? 70 : 120) + "\n";
+            }
+            if(paperbagAdded){
+                this.bill += "Paperbag Added: " + 20 + "\n";
+            }
+            this.bill += "Total Price: " +price + "\n";
             isBill = true;
         }
-        return finalbill.toString();
+        return bill;
 
     }
 }
+
+
+
+

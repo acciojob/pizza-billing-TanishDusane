@@ -60,7 +60,6 @@ public class Pizza {
             finalbill.append(bill);
             finalbill.append("Total Price: ").append(price).append("\n");
             isBill = true;
-            return finalbill.toString();
         }
         return finalbill.toString();
 

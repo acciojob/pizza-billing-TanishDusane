@@ -51,6 +51,7 @@ public class Pizza {
         }
     }
     StringBuilder finalbill = new StringBuilder();
+
     public String getBill(){
 
         if(isBill==false) {
@@ -58,6 +59,7 @@ public class Pizza {
             finalbill.append("Base Price Of The Pizza: ").append(basePrice).append("\n");
             finalbill.append(bill);
             finalbill.append("Total Price: ").append(price).append("\n");
+            isBill = true;
             return finalbill.toString();
         }
         return finalbill.toString();
